@@ -8,11 +8,13 @@ import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 const NavBar = () => {
   return (
+    <>
     <nav className={styles.navBar}>
       <Logo/>
       <Search/>
       <Button children="GIVE FEEDBACK" />
     </nav>
+    </>
   );
 };
 
