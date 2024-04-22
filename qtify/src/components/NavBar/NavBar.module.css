@@ -1,11 +1,9 @@
-
-.navBar{
+.navBar {
     display: flex;
-    align-items: center;
+    align-items: center; /* Added to vertically center children */
     justify-content: space-between;
-    /* background-color: var(--color-primary); */
     background-color: #34C94B;
     height: 74px;
     width: 100vw;
     padding: 0px 32px;
-}
+  }
