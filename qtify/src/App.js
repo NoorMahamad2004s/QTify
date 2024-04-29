@@ -1,15 +1,20 @@
 
-import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
-import Header from "./components/Header/Header";
+  import React from 'react'
+  import "./App.css";
+  import NavBar from "./components/NavBar/NavBar";
+  import Header from "./components/Header/Header";
+  // import GridSection from "./components/GridSection/GridSection";
+  import GridSection from './components/GridSection/GridSection';
 
-function App() {
-  return (
-    <div className="App">
-    <NavBar />
-    <Header />
-  </div>
-  );
-}
+  function App() {
+    return (
+      <div className="App">
+      <NavBar />
+      <Header />
+      <GridSection />
+     
+    </div>
+    );
+  }
 
-export default App;
+  export default App;
