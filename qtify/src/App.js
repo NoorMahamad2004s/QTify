@@ -3,7 +3,7 @@
   import "./App.css";
   import NavBar from "./components/NavBar/NavBar";
   import Header from "./components/Header/Header";
-  import Section from './components/Section/Section';
+  import GridSection from './components/GridSection/GridSection'; 
  
 
 
@@ -12,7 +12,7 @@
       <div className="App">
       <NavBar />
       <Header />
-      <Section title="Top Albums" />
+      <GridSection />
     </div>
     );
   }

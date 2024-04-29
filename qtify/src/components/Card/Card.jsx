@@ -1,24 +1,30 @@
-// Card.js
-import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import Chip from '@material-ui/core/Chip';
-import Typography from '@material-ui/core/Typography';
-import '../Card/Card.module.css'; 
-const AlbumCard = ({ image, follows, name }) => {
-  return (
-    <Card className="card">
-      <CardMedia
-        className="media"
-        image={image}
-        title="Album Image"
-      />
-      <Chip label={`Follows: ${follows}`} className="chip" />
-      <div className="bottomSection">
-        <Typography variant="h6">{name}</Typography>
-      </div>
-    </Card>
-  );
-};
+    // Card.js
+    import React from 'react';
+    import styles from './Card.module.css';
+    import { Chip, Tooltip } from '@mui/material';
 
-export default AlbumCard;
+    const Card = ({ data }) => {
+      const { image, follows, title } = data;
+
+      return (
+        <Tooltip title={`${follows} Follows`} placement="top" arrow>
+          <div className={styles.wrapper}>
+            <div className={styles.card}>
+              <img src={image} alt="album" loading="lazy" />
+              <div className={styles.banner}>
+                <Chip
+                  label={`${follows} Follows`}
+                  size="small"
+                  className={styles.chip}
+                />
+              </div>
+            </div>
+            <div className={styles.titleWrapper}>
+              <p>{title}</p>
+            </div>
+          </div>
+        </Tooltip>
+      );
+    };
+
+    export default Card;
