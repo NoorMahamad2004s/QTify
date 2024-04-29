@@ -1,30 +1,38 @@
-
+// Card.js
 import React from 'react';
-import styles from './Card.module.css';
-import { Chip, Tooltip } from '@mui/material';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Card = ({ data }) => {
-  const { image, follows, title } = data;
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+    margin: '20px',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
+
+const DummyCard = () => {
+  const classes = useStyles();
 
   return (
-    <Tooltip title={`${follows} Follows`} placement="top" arrow>
-      <div className={styles.wrapper}>
-        <div className={styles.card}>
-          <img src={image} alt="album" loading="lazy" />
-          <div className={styles.banner}>
-            <Chip
-              label={`${follows} Follows`}
-              size="small"
-              className={styles.chip}
-            />
-          </div>
-        </div>
-        <div className={styles.titleWrapper}>
-          <p>{title}</p>
-        </div>
-      </div>
-    </Tooltip>
+    <Card className={classes.root}>
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Dummy Card
+        </Typography>
+        <Typography variant="h5" component="h2">
+          Dummy Text
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 
-export default Card;
+export default DummyCard;
