@@ -1,38 +1,24 @@
 // Card.js
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    margin: '20px',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-const DummyCard = () => {
-  const classes = useStyles();
-
+import '../Card/Card.module.css'; 
+const AlbumCard = ({ image, follows, name }) => {
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Dummy Card
-        </Typography>
-        <Typography variant="h5" component="h2">
-          Dummy Text
-        </Typography>
-      </CardContent>
+    <Card className="card">
+      <CardMedia
+        className="media"
+        image={image}
+        title="Album Image"
+      />
+      <Chip label={`Follows: ${follows}`} className="chip" />
+      <div className="bottomSection">
+        <Typography variant="h6">{name}</Typography>
+      </div>
     </Card>
   );
 };
 
-export default DummyCard;
+export default AlbumCard;

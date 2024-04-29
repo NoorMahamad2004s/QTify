@@ -3,7 +3,8 @@
   import "./App.css";
   import NavBar from "./components/NavBar/NavBar";
   import Header from "./components/Header/Header";
-  import DummyCard from './components/Card/Card';
+  import Section from './components/Section/Section';
+ 
 
 
   function App() {
@@ -11,8 +12,7 @@
       <div className="App">
       <NavBar />
       <Header />
-      <DummyCard />
-     
+      <Section title="Top Albums" />
     </div>
     );
   }
